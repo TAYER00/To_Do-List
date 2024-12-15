@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:mitch_ko/Components/Todo_class.dart';
 import 'package:mitch_ko/Components/Todo_tile.dart';
 import 'package:mitch_ko/Components/alert_Dialogue.dart';
-import 'package:mitch_ko/pages/Page_2.dart';
+
 
 class Page1 extends StatefulWidget {
   @override
   _Page1State createState() => _Page1State();
 }
+
 
 List<Todo> todos = [
   Todo(task: "Faire les courses"),
@@ -16,6 +17,7 @@ List<Todo> todos = [
 ];
 
 class _Page1State extends State<Page1> {
+  
   void _addNewTask() async {
     String? newTask = await showAddTaskDialog(context);
     if (newTask != null && newTask.isNotEmpty) {
@@ -87,20 +89,6 @@ class _Page1State extends State<Page1> {
       ),
       body: Column(
         children: [
-          // Bouton pour naviguer vers la Page 2
-          // Padding(
-          //   padding: const EdgeInsets.all(16.0),
-          //   child: ElevatedButton(
-          //     onPressed: () {
-          //       Navigator.push(
-          //         context,
-          //         MaterialPageRoute(builder: (context) => Page2()),
-          //       );
-          //     },
-          //     child: Text("Aller à la Page 2"),
-          //   ),
-          // ),
-          // Liste des tâches
           Expanded(
             child: ListView.builder(
               itemCount: todos.length,

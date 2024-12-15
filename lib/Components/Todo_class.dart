@@ -1,5 +1,7 @@
 class Todo {
-  String task;             // Propriété pour le nom de la tâche
+  
+  String task;
+               // Propriété pour le nom de la tâche
   bool taskCompleted;      // Propriété pour savoir si la tâche est terminée
 
   // Constructeur de la classe Todo

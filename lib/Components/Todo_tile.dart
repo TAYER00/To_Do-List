@@ -4,6 +4,7 @@ import 'package:mitch_ko/Components/Todo_class.dart';
 
 // Assurez-vous que votre modèle Todo est bien importé
 class TodoListTile extends StatelessWidget {
+  
   final Todo todo;
   final VoidCallback onDelete; // Callback pour la suppression
   final VoidCallback onEdit;
@@ -53,6 +54,8 @@ class TodoListTile extends StatelessWidget {
             ),
           ],
         ),
+
+
         child: Card(
           elevation: 4,
           margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -60,14 +63,16 @@ class TodoListTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           color: const Color.fromARGB(255, 225, 237, 13),
+
+
           child: ListTile(
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             leading: Checkbox(
               value: todo.taskCompleted,
               onChanged: (bool? value) {
                 // Mettre à jour l'état de la tâche
                 todo.onChange();
+
                 (context as Element).markNeedsBuild();
               },
               activeColor: Colors.blue,
